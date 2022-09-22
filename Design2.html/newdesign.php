@@ -19,15 +19,19 @@ include 'koneksi.php';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
-  <link rel="stylesheet" href="edtt.css">
+  
+  <link rel="stylesheet" href="newdesign.css">
+
 </head>
 <body>
   <header>
-    
-    <main>
+    <div class="con">
+      <div></div>
+    </div>
+  
   
   <nav>
-    <a href="index.html" class="brand">
+    <a href="index.php" class="brand">
       <span>EL</span>xavac.
     </a>
   </div>
@@ -35,19 +39,25 @@ include 'koneksi.php';
   <div class="container">
       <div>
       </div>
+
       <div class="line">
         <div></div>
       </div>
+
       <ul>
         <li><a class="s"href="index.html"><img src="./Timeline.svg" alt=""> Siswa</a></li>
-        <li><a class="b" href="#about"><img src="./Timeline.svg" alt=""> Barang</a></li>
+        <li><a class="b" href="displaybrg1.php"><img src="./Timeline.svg" alt=""> Barang</a></li>
       </ul>
     </div>
 
     <div class="aes">
-      <div class="src">
-          <h2 class="ha"><i class="uil uil-search"></i> Search Now.....</h2>
-      </div>
+      <!-- <div class="src">
+        </div> -->
+        <h1 class="ha"><i class="uil uil-search"></i></h1>
+
+      <form action="" GET>
+        <input class="src" type="text" name="search" placeholder="     Search Now..")>
+      </form>
 
       <div class="sq">
         <div></div>
@@ -67,42 +77,57 @@ include 'koneksi.php';
       </div>
     </div>
 
-    <div class="vrs">
+    <div class="sub">
+      <h4 class="sub-heading"> <a href="design.html">CREATE</a>
+      </h4> 
+    </div>
+
+    <div class="vrr">
       <div></div>
     </div>
 
+    <div class="table">
+      <table>
 
-    <form action="savebrg.php" method="post">
+        <thead>
 
-      <h4 class="ii">ID Item :</h4><input class="input" type="number" name="id_b" placeholder="ID Item"><br>
-      <h4 class="ii">Item Name :</h4><input class="input" type="text" name="nama_barang" placeholder="Item Name"><br>
-      <h4 class="ii">Type :</h4><input class="input" type="date" name="jenis_barang" placeholder="Type">" ><br>
-      <h4 class="ii">Condition :</h4><input class="input" type="text" name="condition" placeholder="Condition" ><br>
-      <h4 class="ii">Heavy :</h4><input class="input" type="text" name="berat" placeholder="Heavy"><br>
-      <h4 class="ii">Total :</h4><input class="input" type="text" name="jumlah" placeholder="Total"><br>
-      <h4 class="ii">Date Borrow :</h4><input class="input" type="date" name="tgl_p" placeholder="Date Borrow"><br>
-      <h4 class="ii">Date Return :</h4><input class="input" type="date" name="tgl_k" placeholder="Date Return"><br>
-      <h4 class="ii">Status :</h4><input class="input" type="text" name="status" placeholder="Status"><br>
-      <input class="submit" type="submit" name="simpan" value="simpan">
-          
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    </form>
+          <tr>
+            <th>ID</th>
+            <th>Item code</th>
+            <th>Name</th> 
+            <th>Telephone</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
 
-  </main>
-</header>
+<?php
 
-</body>
-</html>
+$sql   = "SELECT * FROM ssw"; 
+$query = mysqLi_query ($connect,$sql);
+while($data = mysqLi_fetch_array($query)){  
+
+
+echo 
+
+
+"<tr>
+<td>.$data[id_s].</td> 
+<td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
+<td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
+<td>.$data[telephone].</td>
+<td>.$data[email].</td>
+
+<td>
+<a href='editdisplay.php?id_s=".$data['id_s']."'>Edit</a>
+<a href='delete.php?id_s=".$data['id_s']."'>Hapus</a>
+</td>
+</tr>"
+
+;
+}
+
+?>
+
+        </thead>
+      </table>
+    </div>

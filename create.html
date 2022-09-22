@@ -1,17 +1,6 @@
 <?php
 include 'koneksi.php';
-
-$id_s = $_GET['id_s']; // menangkap data atau emngambil data melalui url
-$sql = "SELECT * FROM ssw WHERE id_s = '$id_s'";
-$query = mysqli_query($connect,$sql);
-$data = mysqli_fetch_assoc($query); // mengambil data dari sql lalu di ubah dalam bentuk baris dan nama indeks array nya di ubah dalam bentuk column
-
-if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan kurang dari 1 baris data maka akan mengeluarkan steatment 
-  die("Data Tidak Ditemukan");
-}
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -83,7 +72,6 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
         <p>Hi , Welcome To Data Siswa</p>
       </div>
     </div>
-
     <div class="vrr">
       <div><a href="eth.php"> <img src="./ar.svg" alt=""> </a></div>
     </div>
@@ -130,40 +118,40 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
 
           <input class="submit" type="submit" name="simpan" value="simpan"> -->
           
-          <form action="funceddit.php" method="post">
+          <form action="simpan.php" method="post">
             <table>
 
                 <tr class="pi">
                   <td class="nm">ID User</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="id_s" value="<?php echo $data ['id_s'] ?>"></td>
+                  <td><input class="input" type="text" name="id_s" placeholder="ID User"></td>
   
                 <tr class="pi">
                   <td class="nm">ID Item</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="id_b" value="<?php echo $data ['id_b'] ?>"></td>
+                  <td><input class="input" type="text" name="id_b" placeholder="ID Item"></td>
                 </tr>
                 <tr class="pi">
                   <td class="nm">Name</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="name" value="<?php echo $data ['name'] ?>"></td>
+                  <td><input class="input" type="text" name="name" placeholder="Name"></td>
                 </tr>
                 <tr class="pi">
                   <td class="nm">Tall</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="Tall" value="<?php echo $data ['Tall'] ?>"></td>
+                  <td><input class="input" type="text" name="Tall" placeholder="Tall"></td>
                 </tr>
                 <tr class="pi">
-                  <td class="nm">Births</td>
+                  <td class="nm">Birth</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="date" name="Birth" value="<?php echo $data ['Birth'] ?>"></td>
+                  <td><input class="input" type="date" name="Birth" placeholder="Birth"></td>
                 </tr>
                 <tr class="pi">
                   <td class="nm">Gender</td>
                   <td class="nm">:</td>
                   <td>
                     <select class="input" name="Gender">
-                      <option value="<?php echo $data ['Gender'] ?>"><?php echo $data ['Gender'] ?></option>
+                      <option value=""></option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select>
@@ -178,20 +166,20 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
                     <tr class="pii">
                       <td class="nm">Addres</td>
                       <td class="nm">:</td>
-                      <td><input class="input" type="text" name="Addres"value="<?php echo $data ['Addres'] ?>"></td>
+                      <td><input class="input" type="text" name="Addres" placeholder="Addres"></td>
                     </tr>
 
               <tr class="pii">
                 <td class="nm">Age</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="text" name="age"value="<?php echo $data ['age'] ?>"></td>
+                <td><input class="input" type="text" name="age" placeholder="Age"></td>
               </tr>
 
               <tr class="pii">
                 <td class="nm">Grade</td>
                 <td class="nm">:</td>
                 <td><select class="input" name="grade" >
-                  <option value="<?php echo $data ['grade'] ?>"><?php echo $data ['grade'] ?></option>
+                  <option value=""></option>
                   <option value="X">X</option>
                   <option value="XI">XI</option>
                   <option value="XII">XII</option>
@@ -202,13 +190,13 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
               <tr class="pii">
                 <td class="nm">Telp</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="number" name="telephone"value="<?php echo $data ['telephone'] ?>"></td>
+                <td><input class="input" type="number" name="telephone" placeholder="Telp"></td>
               </tr>
 
               <tr class="pii">
                 <td class="nm">Email</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="email" name="email"value="<?php echo $data ['email'] ?>"></td>
+                <td><input class="input" type="email" name="email" placeholder="Email"></td>
               </tr>
               
               <tr class="piii">
@@ -217,8 +205,6 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
                 <td><input class="submit" type="submit" name="simpan" value="simpan"></td>
               </tr>
 
-
-              
 
 
 

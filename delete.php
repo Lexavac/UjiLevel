@@ -3,7 +3,7 @@
 include 'koneksi.php';
 
 if(isset($_GET['id_s'])){
-  header ('Location: display1.php');
+  header ('Location: eth.php');
 }
 
 $id_s = $_GET['id_s'];

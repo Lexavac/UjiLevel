@@ -20,7 +20,7 @@ include 'koneksi.php';//memanggil
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
-  <link rel="stylesheet" href="7ss.css">
+  <link rel="stylesheet" href="index3.css">
 
 </head>
 <body>
@@ -41,20 +41,15 @@ include 'koneksi.php';//memanggil
         <div></div>
       </div>
       <ul>
-        <li><a class="s"href="eth.php"><img src="./st.svg" alt=""> Siswa</a></li>
+        <li><a class="s"href="eth.php"><img src="./ss.svg" alt=""> Siswa</a></li>
         <li><a class="b" href="displaybrg1.php"><img src="./b.svg" alt=""> Barang</a></li>
       </ul>
     </div>
 
     <div class="aes">
         </div>
-        <h1 class="ha"> <img src="sc.svg" alt=""> </i></h1>
 
-        <div class="srcs">
-        <form action="searchfn.php" GET>
-          <input class="src" type="text" name="search" placeholder="     Search Now..")>
-        </form>
-      </div>
+
 
       <div class="sq">
         <div></div>
@@ -66,65 +61,53 @@ include 'koneksi.php';//memanggil
   </nav>
 
 
+    <div class="lines">
+      <div></div>
+    </div>
+
+    <div class="lines2">
+      <div></div>
+    </div>
+
+    <div class="lines3">
+      <div></div>
+    </div>
+
+    <div class="lines4">
+      <div></div>
+    </div>
+
     <div class="dash">
       <div>
-        <h1>Dashboard.</h1>
-        <p>Hi , Welcome To Data Siswa</p>
+        <h2>Welcome to,</h2>
+        <h1>Lexavac app.</h1>
+        <p>There is no limit to where you can go and 
+          What you can do in virtual reality.</p>
       </div>
     </div>
 
-    <div class="sub">
+    <div class="btn">
       <div></div>
-      <h4> <a href="create.html">Create +</a>
-      </h4> 
+      <a href="eth.php">Data siswa</a>
+    </div>
+
+    <div class="btn2">
+      <div></div>
+      <a href="displaybrg1.php">Data Barang</a>
+    </div>
+
+    <div class="ec">
+      <div></div>
+    </div>
+    <div class="ec2">
+      <div></div>
     </div>
 
 
-    <div class="table">
-      <table>
-
-        <thead>
-
-          <tr>
-            <th>ID</th>
-            <th>Item code</th>
-            <th>Name</th> 
-            <th>Telephone</th>
-            <th>Email</th>
-            <th><i class="uil uil-setting"></i></th>
-          </tr>
-
-<?php
-
-$sql   = "SELECT * FROM ssw"; 
-$query = mysqLi_query ($connect,$sql);
-while($data = mysqLi_fetch_array($query)){  
-
-
-echo 
-
-
-"<tr>
-<td>.$data[id_s].</td> 
-<td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
-<td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
-<td>.$data[telephone].</td>
-<td>.$data[email].</td>
-
-<td>
-<a  href='editdisplay.php?id_s=".$data['id_s']."'> <i class='uil uil-edit-alt'></i> </a>
-<a  href='delete.php?id_s=".$data['id_s']."'><i class='uil uil-trash-alt'></i></a>
-</td>
-</tr>"
-
-;
-}
-
-?>
-
-        </thead>
-      </table>
+    <div class="vrr">
+      <div></div>
     </div>
+
 
     <div class="user">
       <h5>Hi , Lexavac.</h5>

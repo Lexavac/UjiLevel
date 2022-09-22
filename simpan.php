@@ -18,14 +18,14 @@
 
     $sqla = "SET FOREIGN_KEY_CHECKS=0";
     $sqlb = "SET FOREIGN_KEY_CHECKS=1";
+
     $sql = "INSERT INTO ssw VALUES('$id_s','$id_b', '$name', '$Tall', '$Birth', '$Gender', '$Addres', '$age', '$grade', '$telephone', '$email') ";
-    $query = mysqli_query($connect,$sql);
 
     $query1 = mysqli_query($connect,$sqla);
     $query2 = mysqli_query($connect,$sql);
     $query3 = mysqli_query($connect,$sqlb);
 
-    if($query){
+    if($query2){
       header('Location: eth.php');
 
     }else{

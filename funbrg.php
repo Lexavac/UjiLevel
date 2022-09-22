@@ -7,29 +7,39 @@
     $id_b = $_POST['id_b'];
     $nama_barang = $_POST['nama_barang'];
     $jenis_barang = $_POST['jenis_barang'];
-    $condition = $_POST['condition'];
+    $keadaan = $_POST['keadaan'];
     $berat = $_POST['berat'];
     $jumlah = $_POST['jumlah'];
     $tgl_p = $_POST['tgl_p'];
     $tgl_k = $_POST['tgl_k'];
     $stat = $_POST['stat'];
 
-    $sqla = "SET FOREIGN_KEY_CHECKS=0";
-    $sqlb = "SET FOREIGN_KEY_CHECKS=1";
 
-    $sql = "INSERT INTO brg VALUES('$id_b','$nama_barang', '$jenis_barang', '$condition', '$berat', '$jumlah', '$tgl_p', '$tgl_k', '$stat') ";
+    $sql = "UPDATE brg SET
+    nama_barang='$nama_barang', 
+    jenis_barang='$jenis_barang', 
+    keadaan = '$keadaan',
+    berat = '$berat',
+    jumlah = '$jumlah',
+    tgl_p = '$tgl_p',
+    tgl_k = '$tgl_k',
+    stat = '$stat'
 
-    $query1 = mysqli_query($connect,$sqla);
+
+    WHERE id_b='$id_b'";
+
     $query = mysqli_query($connect,$sql);
-    $query3 = mysqli_query($connect,$sqlb);
+
 
 
     if($query){
       header('Location: displaybrg1.php');
 
     }else{
-      header('Location: save.php?status=gagal');
+      header('Location: funceddit.php?status=gagal');
     }
   }
+
+  var_dump($keadaan)
 
 ?>

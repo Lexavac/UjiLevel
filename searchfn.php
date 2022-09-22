@@ -1,6 +1,8 @@
+
 <?php
 include 'koneksi.php';//memanggil
 ?>
+
 
 
 <!DOCTYPE html>
@@ -20,7 +22,7 @@ include 'koneksi.php';//memanggil
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
-  <link rel="stylesheet" href="7ss.css">
+  <link rel="stylesheet" href="7s.css">
 
 </head>
 <body>
@@ -79,7 +81,9 @@ include 'koneksi.php';//memanggil
       </h4> 
     </div>
 
-
+    <div class="vrr">
+      <div><a href="eth.php"> <img src="./ar.svg" alt=""> </a></div>
+    </div>
     <div class="table">
       <table>
 
@@ -96,31 +100,41 @@ include 'koneksi.php';//memanggil
 
 <?php
 
-$sql   = "SELECT * FROM ssw"; 
-$query = mysqLi_query ($connect,$sql);
-while($data = mysqLi_fetch_array($query)){  
+  
+  // if(isset($_GET['search'])){
+  //   $pencarian = $_GET['search'];
+  //   $query = "SELECT * FROM ssw WHERE id_s LIKE '%".$pencarian."%'"; 
+  // }else{
+  //   $query = "SELECT * FROM ssw";
+  // }
+
+    $id = $_GET['search'];
+
+    $sql = "SELECT * FROM ssw WHERE id_s LIKE '%$id%' ";
+    
+    $query = mysqLi_query ($connect,$sql);
+    while($data = mysqLi_fetch_array($query)){  
+    
+      echo 
 
 
-echo 
-
-
-"<tr>
-<td>.$data[id_s].</td> 
-<td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
-<td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
-<td>.$data[telephone].</td>
-<td>.$data[email].</td>
-
-<td>
-<a  href='editdisplay.php?id_s=".$data['id_s']."'> <i class='uil uil-edit-alt'></i> </a>
-<a  href='delete.php?id_s=".$data['id_s']."'><i class='uil uil-trash-alt'></i></a>
-</td>
-</tr>"
-
-;
-}
-
-?>
+      "<tr>
+      <td>.$data[id_s].</td> 
+      <td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
+      <td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
+      <td>.$data[telephone].</td>
+      <td>.$data[email].</td>
+      
+      <td>
+      <a href='editdisplay.php?id_s=".$data['id_s']."'><i class='uil uil-edit-alt'></i></a>
+      <a href='delete.php?id_s=".$data['id_s']."'><i class='uil uil-trash-alt'></i></a>
+      </td>
+      </tr>"
+      
+      ;
+      }
+  
+  ?>
 
         </thead>
       </table>
@@ -137,3 +151,6 @@ echo
 
 </body>
 </html>
+
+
+

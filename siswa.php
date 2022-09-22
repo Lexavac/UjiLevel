@@ -1,6 +1,3 @@
-<?php
-include 'koneksi.php';//memanggil
-?>
 
 
 <!DOCTYPE html>
@@ -19,16 +16,18 @@ include 'koneksi.php';//memanggil
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
-  <link rel="stylesheet" href="">
+  
+  <link rel="stylesheet" href="siswa.css">
+
 </head>
 <body>
   <header>
     
-    <main>
+  
   
   <nav>
-    <a href="index.html" class="brand">
-      <span>EL</span>xavac.
+    <a href="index.php" class="brand">
+      LX.
     </a>
   </div>
 
@@ -38,24 +37,39 @@ include 'koneksi.php';//memanggil
       <div class="line">
         <div></div>
       </div>
-      <ul>
-        <li><a class="s"href="index.html"><img src="./Timeline.svg" alt=""> Siswa</a></li>
-        <li><a class="b" href="#about"><img src="./Timeline.svg" alt=""> Barang</a></li>
-      </ul>
+
+      <div class="ic">
+        <ul>
+          <li><a href="index.html"> <img src="./Dashboard.svg" alt=""> </a></li>
+
+        </ul>
+      </div>
+
+      <div>
+
+      </div>
+        <ul>
+          <li><a href="displaybrg1.php"> <img src="./Dashboard.svg" class="ds"> </a></li>
+        </ul>
     </div>
 
     <div class="aes">
-      <div class="src">
-          <h2 class="ha"><i class="uil uil-search"></i> Search Now.....</h2>
+        </div>
+        <h1 class="ha"><i class="uil uil-search"></i></h1>
+
+      <div class="srcs">
+        <form action="searchfn.php" GET>
+          <input class="src" type="text" name="search" placeholder="     Search Now..")>
+        </form>
       </div>
 
       <div class="sq">
         <div></div>
       </div>
 
-      <div class="bck">
+      <!-- <div class="bck">
         <h3 class="bc"> <a href=""><i class="uil uil-angle-left"></i>Back To Dashboard</a></h3>
-      </div>
+      </div> -->
 
     </div>
   </nav>
@@ -68,13 +82,13 @@ include 'koneksi.php';//memanggil
     </div>
 
     <div class="sub">
-      <h4 class="sub-heading"> <a href="#">CREATE</a>
+      <h4 class="sub-heading"> <a href="design.html">CREATE</a>
       </h4> 
     </div>
 
-    <!-- <div class="tbl">
+    <div class="vrr">
       <div></div>
-    </div> -->
+    </div>
 
     <div class="table">
       <table>
@@ -84,49 +98,19 @@ include 'koneksi.php';//memanggil
           <tr>
             <th>ID</th>
             <th>Item code</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Grade</th>
+            <th>Name</th> 
             <th>Telephone</th>
             <th>Email</th>
             <th>Action</th>
           </tr>
 
-<?php
-
-$sql   = "SELECT * FROM ssw"; 
-$query = mysqLi_query ($connect,$sql);
-while($data = mysqLi_fetch_array($query)){  
-
-echo 
-
-
-"<tr>
-<td>.$data[id_s].</td> 
-<td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
-<td>.$data[name].</td>
-<td>.$data[age].</td>
-<td>.$data[grade].</td>
-<td>.$data[telephone].</td>
-<td>.$data[email].</td>
-
-<td>
-<a href='formedit.php?id_s=".$data['id_s']."'>Edit</a>
-<a href='hapus.php?id=".$data['id_s']."'>Hapus</a>
-</td>
-</tr>"
-
-;
-}
-
-?>
 
         </thead>
       </table>
     </div>
 
 
-  </main>
+
 </header>
 
 </body>

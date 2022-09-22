@@ -16,7 +16,18 @@
     $telephone = $_POST['telephone'];
     $email = $_POST['email'];
 
-    $sql = "UPDATE ssw SET id_b='$id_b', name='$name', Tall='$Tall', Birth='$Birth', Gender='$Gender', Addres='$Addres', age='$age', grade='$grade', telephone='$telephone', email='$email' WHERE id_s='$id_s'";
+    $sql = "UPDATE ssw SET 
+    id_b='$id_b', 
+    name='$name', 
+    Tall='$Tall', 
+    Birth='$Birth', 
+    Gender='$Gender', 
+    Addres='$Addres', 
+    age='$age', 
+    grade='$grade', 
+    telephone='$telephone', 
+    email='$email' 
+    WHERE id_s='$id_s'";
     $query = mysqli_query($connect,$sql);
 
 
@@ -25,7 +36,7 @@
       header('Location: eth.php');
 
     }else{
-      header('Location: simpan.php?status=gagal');
+      header('Location: funceddit.php?status=gagal');
     }
   }
 

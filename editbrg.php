@@ -12,7 +12,6 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,16 +28,18 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
-  <link rel="stylesheet" href="edtt.css">
+  
+  <link rel="stylesheet" href="crt2.css">
+
 </head>
 <body>
   <header>
     
-    <main>
+  
   
   <nav>
-    <a href="index.html" class="brand">
-      <span>EL</span>xavac.
+    <a href="index.php" class="brand">
+      LX.
     </a>
   </div>
 
@@ -49,26 +50,30 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
         <div></div>
       </div>
       <ul>
-        <li><a class="s"href="eth.php"><img src="./Timeline.svg" alt=""> Siswa</a></li>
-        <li><a class="b" href="displaybrg1.php"><img src="./Timeline.svg" alt=""> Barang</a></li>
+        <li><a class="s"href="eth.php"><img src="./ss.svg" alt=""> Siswa</a></li>
+        <li><a class="b" href="displaybrg1.php"><img src="./bb.svg" alt=""> Barang</a></li>
       </ul>
     </div>
 
     <div class="aes">
-      <div class="src">
-          <h2 class="ha"><i class="uil uil-search"></i> Search Now.....</h2>
+        </div>
+        <h1 class="ha"> <img src="sc.svg" alt=""> </i></h1>
+
+        <div class="srcs">
+        <form action="searchfn.php" GET>
+          <input class="src" type="text" name="search" placeholder="     Search Now..")>
+        </form>
       </div>
 
       <div class="sq">
         <div></div>
       </div>
 
-      <div class="bck">
-        <h3 class="bc"> <a href=""><i class="uil uil-angle-left"></i>Back To Dashboard</a></h3>
-      </div>
+      
 
     </div>
   </nav>
+
 
     <div class="dash">
       <div>
@@ -77,40 +82,88 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
       </div>
     </div>
 
-    <div class="vrs">
-      <div></div>
+    <div class="vrr">
+      <div><a href="eth.php"> <img src="./ar.svg" alt=""> </a></div>
     </div>
 
-    </div>
 
-    <form action="funceddit.php" method="post">
 
-          <h4 class="ii">ID Item :</h4><input class="input" type="number" name="id_b" placeholder="ID Item"value="<?php echo $data ['id_b'] ?>" ><br>
-          <h4 class="ii">Item Name :</h4><input class="input" type="text" name="nama_barang" placeholder="Item Name"value="<?php echo $data ['nama_barang'] ?>" ><br>
-          <h4 class="ii">Type :</h4><input class="input" type="date" name="jenis_barang" placeholder="Type"value="<?php echo $data ['jenis_barang'] ?>" ><br>
-          <h4 class="ii">Condition :</h4><input class="input" type="text" name="condition" placeholder="Condition"value="<?php echo $data ['condition'] ?>" ><br>
-          <h4 class="ii">Heavy :</h4><input class="input" type="text" name="berat" placeholder="Heavy"value="<?php echo $data ['berat'] ?>" ><br>
-          <h4 class="ii">Total :</h4><input class="input" type="text" name="jumlah" placeholder="Total"value="<?php echo $data ['jumlah'] ?>" ><br>
-          <h4 class="ii">Date Borrow :</h4><input class="input" type="date" name="tgl_p" placeholder="Date Borrow"value="<?php echo $data ['tgl_p'] ?>" ><br>
-          <h4 class="ii">Date Return :</h4><input class="input" type="date" name="tgl_k" placeholder="Date Return"value="<?php echo $data ['tgl_k'] ?>" ><br>
-          <h4 class="ii">Status :</h4><input class="input" type="text" name="status" placeholder="Status"value="<?php echo $data ['status'] ?>" ><br>
-          <input class="submit" type="submit" name="simpan" value="simpan">
           
-      
+          <form action="funbrg.php" method="post">
+            <table>
+
+                <tr class="pi">
+                  <td class="nm">ID Item</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="id_b" value="<?php echo $data ['id_b'] ?>" ></td>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    </form>
+                <tr class="pi">
+                  <td class="nm">Item Name</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="nama_barang" value="<?php echo $data ['nama_barang'] ?>"></td>
+                </tr>
+                <tr class="pi">
+                  <td class="nm">Item Type</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="jenis_barang" value="<?php echo $data ['jenis_barang'] ?>"></td>
+                </tr>
+                <tr class="pi">
+                  <td class="nm">Condition</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="keadaan" value="<?php echo $data ['keadaan'] ?>"></td>
+                </tr>
+                
+                <tr class="pi">
+                  <td class="nm">Heavy</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="berat" placeholder="Heavy" value="<?php echo $data ['berat'] ?>"></td>
+                </tr>
+
+                
+                    <tr class="pii">
+                      <td class="nm">Total</td>
+                      <td class="nm">:</td>
+                      <td><input class="input" type="text" name="jumlah" placeholder="Total" value="<?php echo $data ['jumlah'] ?>"></td>
+                    </tr>
+
+              <tr class="pii">
+                <td class="nm">Date Return</td>
+                <td class="nm">:</td>
+                <td><input class="input" type="date" name="tgl_p" value="<?php echo $data ['tgl_p'] ?>"></td>
+              </tr>
+
+              <tr class="pii">
+                <td class="nm">Date Borrow</td>
+                <td class="nm">:</td>
+                <td><input class="input" type="date" name="tgl_k" value="<?php echo $data ['tgl_k'] ?>"></td>
+              </tr>
+
+              <tr class="pii">
+                <td class="nm">Stats</td>
+                <td class="nm">:</td>
+                <td><input class="input" type="text" name="stat" value="<?php echo $data ['stat'] ?>"></td>
+              </tr>
+              
+              <tr class="piii">
+                <td class="nm"></td>
+                <td class="nm"></td>
+                <td><input class="submit" type="submit" name="simpan" value="simpan"></td>
+              </tr>
+
+
+              
+
+
+
+
+            </table>
+          </form>
+
+    <div class="user">
+      <h5>Hi , Lexavac.</h5>
+      <img src="acc.svg" alt="">
+    </div>
+
 
   </main>
 </header>
