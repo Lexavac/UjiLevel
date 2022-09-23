@@ -78,12 +78,12 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
     <div class="dash">
       <div>
         <h1>Dashboard.</h1>
-        <p>Hi , Welcome To Data Siswa</p>
+        <p>Hi , Welcome To Edit Data Barang</p>
       </div>
     </div>
 
     <div class="vrr">
-      <div><a href="eth.php"> <img src="./ar.svg" alt=""> </a></div>
+      <div><a href="displaybrg1.php"> <img src="./ar.svg" alt=""> </a></div>
     </div>
 
 

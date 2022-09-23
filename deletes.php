@@ -18,10 +18,9 @@ $query = mysqli_query($connect,$sql);
 $query3 = mysqli_query($connect,$sqlb);
 
 if($query){
-  header('Location: displaybrg1.php');// jika query berhasil di jalankan maka akan mengeluarkan statement seperti di bawah ini 
-
+  header('Location: displaybrg1.php');
 }else{
-  header('Location: hapus.php?status=gagal');
+  header('Location: deletes.php?status=gagal');
 }
 
 

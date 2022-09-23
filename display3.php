@@ -1,15 +1,15 @@
 <?php
-include 'koneksi.php';//memanggil
+include 'koneksi.php';
 ?>
 
 <?php
 
-  $name = $_GET['name']; // menangkap data atau emngambil data melalui url
+  $name = $_GET['name']; 
   $sql = "SELECT * FROM ssw WHERE name = '$name'";
   $query = mysqli_query($connect,$sql);
-  $data = mysqli_fetch_assoc($query); // mengambil data dari sql lalu di ubah dalam bentuk baris dan nama indeks array nya di ubah dalam bentuk column
+  $data = mysqli_fetch_assoc($query); 
 
-  if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan kurang dari 1 baris data maka akan mengeluarkan steatment 
+  if(mysqli_num_rows($query) < 1 ) {
     die("Data Tidak Ditemukan");
   }
 

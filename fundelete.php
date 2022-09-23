@@ -11,7 +11,7 @@ $sql = "DELETE FROM pelanggan WHERE id_pelanggan = '$id_pelanggan'";
 $query = mysqli_query($connect,$sql);
 
 if($query){
-  header('Location: tampilpelanggan.php');// jika query berhasil di jalankan maka akan mengeluarkan statement seperti di bawah ini 
+  header('Location: tampilpelanggan.php');
 
 }else{
   header('Location: hapus.php?status=gagal');

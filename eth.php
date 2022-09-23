@@ -69,7 +69,7 @@ include 'koneksi.php';//memanggil
     <div class="dash">
       <div>
         <h1>Dashboard.</h1>
-        <p>Hi , Welcome To Data Siswa</p>
+        <p>Hi , Welcome To Data Siswa </p>
       </div>
     </div>
 
@@ -137,3 +137,4 @@ echo
 
 </body>
 </html>
+<!-- hh -->

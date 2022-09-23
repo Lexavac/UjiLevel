@@ -372,11 +372,22 @@ nav .ha{
   opacity: .4;
 }
 
+nav .ha{
+  /* color: var(--text-primary); */
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 485px;
+  top: 17px;
+  z-index: 1;  
+  opacity: .4;
+}
+
 .src {
   position: fixed;
   width: 362px;
   height: 40px;
-  left: 157px;
+  left: 180px;
   top: 30px;
   border: none;
 
@@ -384,7 +395,6 @@ nav .ha{
   box-shadow: 5px 4px 11px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
 }
-
 
 .table {
   color: var(--text-primary);

@@ -28,7 +28,16 @@
 
     WHERE id_b='$id_b'";
 
+
+    $sqla = "SET FOREIGN_KEY_CHECKS=0";
+    $sqlb = "SET FOREIGN_KEY_CHECKS=1";
+
+
+
+    $query1 = mysqli_query($connect,$sqla);
     $query = mysqli_query($connect,$sql);
+    $query3 = mysqli_query($connect,$sqlb);
+
 
 
 

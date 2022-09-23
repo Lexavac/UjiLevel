@@ -76,9 +76,9 @@ include 'koneksi.php';//memanggil
       <h4> <a href="create2.html">Create +</a>
       </h4> 
     </div>
-    
+
     <div class="vrr">
-      <div><a href="eth.php"> <img src="./ar.svg" alt=""> </a></div>
+      <div><a href="displaybrg1.php"> <img src="./ar.svg" alt=""> </a></div>
     </div>
     <div class="table">
       <table>

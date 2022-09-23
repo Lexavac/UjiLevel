@@ -231,7 +231,7 @@ nav ul li .b img:hover {
 
 nav .ha{
   /* color: var(--text-primary); */
-  position: absolute;
+  position: fixed;
   width: 20px;
   height: 20px;
   left: 485px;
@@ -456,7 +456,7 @@ table tr:nth-child(odd) {
 }
 
 .user {
-  position: absolute;
+  position: fixed;
   left: 1480px;
   top: 12px;
 
@@ -492,10 +492,4 @@ border-radius: 108px;
 
 table .ryu {
   color: var(--accent);
-}
-
-.vrr a  {
-  position: fixed;
-top: 35px;
-left: 129px;
 }
