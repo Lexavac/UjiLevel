@@ -20,7 +20,7 @@ include 'koneksi.php';//memanggil
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
-  <link rel="stylesheet" href="eteh.css">
+  <link rel="stylesheet" href="eth2.css">
 
 </head>
 <body>
@@ -38,9 +38,10 @@ include 'koneksi.php';//memanggil
       <div>
       </div>
 
+      </div>
       <ul>
-        <li><a class="s"href="eth.php"><img src="./muak.svg" alt="">shees</a></li>
-        <li><a class="b"href="eth2.php"><img src="./et2.svg" alt=""> shees</a></li>
+      <li><a class="s"href="eth.php"><img src="./muak.svg" alt=""></a></li>
+        <li><a class="b"href="eth2.php"><img src="./et2.svg" alt=""></a></li>
         <li><a class="c"href="eth3.php"><img src="./et3.svg" alt=""> </a></li>
         <li><a class="d"href="eth4.php"><img src="./et4.svg" alt=""> </a></li>
         <!-- <li><a class="b" href="displaybrg1.php"><img src="./b.svg" alt=""> Barang</a></li> -->
@@ -62,89 +63,13 @@ include 'koneksi.php';//memanggil
   </nav>
 
   
-  <div class="sub">
-    <div></div>
-    <h4> <a href="create.html">Create +</a>
-    </h4> 
-  </div>
-  
-  <div class="srcs">
-  <form action="searchfn.php" GET>
-    <input class="src" type="text" name="search" placeholder="     Search Now..")>
-  </form>
-</div>
 
   <div class="container-all">
-    <div class="cn">
-
-      <div class="dash">
-        <div>
-          <h1>Dashboard.</h1>
-          <p>Hi , Welcome To Table Data</p>
-        </div>
-      </div>
-    
-      
-    
-    
-        <div class="table">
-          <table>
-    
-            <thead>
-    
-              <tr>
-                <th>ID</th>
-                <th>Item code</th>
-                <th>Name</th> 
-                <th>Telephone</th>
-                <th>Email</th>
-                <th><i class="uil uil-setting"></i></th>
-              </tr>
-    
-              <?php
-              
-              $id = $_GET['search'];
-              
-              $sql = "SELECT * FROM ssw WHERE id_s LIKE '%$id%' ";
-              
-              $query = mysqLi_query ($connect,$sql);
-              while($data = mysqLi_fetch_array($query)){  
-
-    
-    
-    echo 
-    
-    
-    "<tr>
-    <td>.$data[id_s].</td> 
-    <td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
-    <td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
-    <td>.$data[telephone].</td>
-    <td>.$data[email].</td>
-    
-    <td>
-    <a  href='editdisplay.php?id_s=".$data['id_s']."'> <i class='uil uil-edit-alt'></i> </a>
-    <a  href='delete.php?id_s=".$data['id_s']."'><i class='uil uil-trash-alt'></i></a>
-    </td>
-    </tr>"
-    
-    ;
-    }
-    
-    ?>
-    
-            </thead>
-          </div>
-          </table>
-        </div>
-      </div>
-  
-  
-    <div class="container-keranjang">
+    <div class="container-barang">
     <div class="dash">
       <div>
         <h1>Dashboard.</h1>
-        <!-- <p>Hi , Welcome To Data Siswa </p> -->
+        <p>Hi , Welcome To Table Data</p>
       </div>
     </div>
     
@@ -153,7 +78,12 @@ include 'koneksi.php';//memanggil
       <input class="src" type="text" name="search" placeholder="     Search Now..")>
     </form>
   </div>
-
+  
+      <div class="sub">
+        <div></div>
+        <h4> <a href="createb.html">Create +</a>
+        </h4> 
+      </div>
   
   
       <div class="table">
@@ -169,9 +99,8 @@ include 'koneksi.php';//memanggil
               <th>Email</th>
               <th><i class="uil uil-setting"></i></th>
             </tr>
-
-
-            <?php
+  
+  <?php
   
   $sql   = "SELECT * FROM ssw"; 
   $query = mysqLi_query ($connect,$sql);
@@ -181,12 +110,32 @@ include 'koneksi.php';//memanggil
   echo 
   
   
-  ""
+  "<tr>
+  <td>.$data[id_s].</td> 
+  <td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
+  <td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
+  <td>.$data[telephone].</td>
+  <td>.$data[email].</td>
+  
+  <td>
+  <a  href='editb.php?id_s=".$data['id_s']."'> <i class='uil uil-edit-alt'></i> </a>
+  <a  href='delete.php?id_s=".$data['id_s']."'><i class='uil uil-trash-alt'></i></a>
+  </td>
+  </tr>"
   
   ;
-}
-
-?>
+  }
+  
+  ?>
+  
+          </thead>
+        </table>
+      </div>
+    </div>
+  
+  
+  
+    
   
 </thead>
 </table>
@@ -196,7 +145,7 @@ include 'koneksi.php';//memanggil
 </div>
 
 
-<tr class="pii">
+<!-- <tr class="pii">
     <td class="nm"> Data Masuk</td>
     <td class="nm">:</td>
     <td><input class="input" type="" name="tgl_k" placeholder="Data Masuk"></td>
@@ -212,7 +161,7 @@ include 'koneksi.php';//memanggil
     <td class="nm"></td>
     <td class="nm"></td>
     <td><input class="submit" type="submit" name="simpan" value="simpan"></td>
-  </tr>
+  </tr> -->
 
 
 
@@ -220,5 +169,4 @@ include 'koneksi.php';//memanggil
 
 </body>
 </html>
-<!-- hh -->
 <!-- hh -->

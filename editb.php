@@ -1,6 +1,19 @@
 <?php
 include 'koneksi.php';
+
+$id_s = $_GET['id_s']; // menangkap data atau emngambil data melalui url
+$sql = "SELECT * FROM ssw WHERE id_s = '$id_s'";
+$query = mysqli_query($connect,$sql);
+$data = mysqli_fetch_assoc($query); // mengambil data dari sql lalu di ubah dalam bentuk baris dan nama indeks array nya di ubah dalam bentuk column
+
+if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan kurang dari 1 baris data maka akan mengeluarkan steatment 
+  die("Data Tidak Ditemukan");
+}
+
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -20,7 +33,7 @@ include 'koneksi.php';
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
-  <link rel="stylesheet" href="crt.css">
+  <link rel="stylesheet" href="crt2.css">
 
 </head>
 <body>
@@ -69,83 +82,54 @@ include 'koneksi.php';
       </div>
     </div>
   
+  
+    </form>
+    <div class="user">
+      <h5>Hi , Lexavac.</h5>
+      <img src="acc.svg" alt="">
+    </div>
 
 
-    <!-- <form action="simpan.php" method="post">
+  </main>
+</header>
 
-          <h4 class="ii">ID User</h4>:<input class="input" type="text" name="id_s" placeholder="ID User"><br>
-
-          <h4 class="ii">ID Item :</h4><input class="input" type="number" name="id_b" placeholder=" ID Item"><br>
-
-          <h4 class="ii">Name    :</h4><input class="input" type="text" name="name" placeholder="Name"><br>
-
-          <h4 class="ii">Tall    :</h4><input class="input" type="text" name="Tall" placeholder="Tall"><br>
-
-          <h4 class="ii">Birth   :</h4><input class="input" type="date" name="Birth" placeholder="Birth"><br>
-
-          <h4 class="ii">Gender  :</h4>
-          <select class="input" name="Gender">
-            <option value=""></option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          <br>
-
-
-          <h4 class="ii">Addres  :</h4><input class="input" type="text" name="Addres" placeholder="Addres"><br>
-
-          <h4 class="ii">Age     :</h4><input class="input" type="text" name="age" placeholder="Age"><br>
-
-          <h4 class="ii">Grade   :</h4>
-          <select class="input" name="grade" >
-            <option value=""></option>
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
-          </select>
-          <br>
-
-                                      
-          <h4 class="ii">Telp    :</h4><input class="input" type="number" name="telephone" placeholder="Telephone"><br>
-
-          <h4 class="ii">Email   :</h4><input class="input" type="email" name="email" placeholder="Email"><br>
-
-          <input class="submit" type="submit" name="simpan" value="simpan"> -->
+</body>
+</html>
           
-          <form action="simpan.php" method="post">
+          <form action="funceddit.php" method="post">
             <table>
 
                 <tr class="pi">
                   <td class="nm">ID User</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="id_s" placeholder="ID User"></td>
+                  <td><input class="input" type="text" name="id_s" value="<?php echo $data ['id_s'] ?>"></td>
   
                 <tr class="pi">
                   <td class="nm">ID Item</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="id_b" placeholder="ID Item"></td>
+                  <td><input class="input" type="text" name="id_b" value="<?php echo $data ['id_b'] ?>"></td>
                 </tr>
                 <tr class="pi">
                   <td class="nm">Name</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="name" placeholder="Name"></td>
+                  <td><input class="input" type="text" name="name" value="<?php echo $data ['name'] ?>"></td>
                 </tr>
                 <tr class="pi">
                   <td class="nm">Tall</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="Tall" placeholder="Tall"></td>
+                  <td><input class="input" type="text" name="Tall" value="<?php echo $data ['Tall'] ?>"></td>
                 </tr>
                 <tr class="pi">
-                  <td class="nm">Birth</td>
+                  <td class="nm">Births</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="date" name="Birth" placeholder="Birth"></td>
+                  <td><input class="input" type="date" name="Birth" value="<?php echo $data ['Birth'] ?>"></td>
                 </tr>
                 <tr class="pi">
                   <td class="nm">Gender</td>
                   <td class="nm">:</td>
                   <td>
                     <select class="input" name="Gender">
-                      <option value=""></option>
+                      <option value="<?php echo $data ['Gender'] ?>"><?php echo $data ['Gender'] ?></option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select>
@@ -160,20 +144,20 @@ include 'koneksi.php';
                     <tr class="pii">
                       <td class="nm">Addres</td>
                       <td class="nm">:</td>
-                      <td><input class="input" type="text" name="Addres" placeholder="Addres"></td>
+                      <td><input class="input" type="text" name="Addres"value="<?php echo $data ['Addres'] ?>"></td>
                     </tr>
 
               <tr class="pii">
                 <td class="nm">Age</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="text" name="age" placeholder="Age"></td>
+                <td><input class="input" type="text" name="age"value="<?php echo $data ['age'] ?>"></td>
               </tr>
 
               <tr class="pii">
                 <td class="nm">Grade</td>
                 <td class="nm">:</td>
                 <td><select class="input" name="grade" >
-                  <option value=""></option>
+                  <option value="<?php echo $data ['grade'] ?>"><?php echo $data ['grade'] ?></option>
                   <option value="X">X</option>
                   <option value="XI">XI</option>
                   <option value="XII">XII</option>
@@ -184,13 +168,13 @@ include 'koneksi.php';
               <tr class="pii">
                 <td class="nm">Telp</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="number" name="telephone" placeholder="Telp"></td>
+                <td><input class="input" type="number" name="telephone"value="<?php echo $data ['telephone'] ?>"></td>
               </tr>
 
               <tr class="pii">
                 <td class="nm">Email</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="email" name="email" placeholder="Email"></td>
+                <td><input class="input" type="email" name="email"value="<?php echo $data ['email'] ?>"></td>
               </tr>
               
               <tr class="piii">
@@ -199,6 +183,8 @@ include 'koneksi.php';
                 <td><input class="submit" type="submit" name="simpan" value="simpan"></td>
               </tr>
 
+
+              
 
 
 

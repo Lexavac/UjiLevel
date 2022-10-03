@@ -210,14 +210,9 @@ nav ul li .s img {
   top: -23px;
   height: 30px;
   width: 30px;
-  filter: grayscale(100%);
   /* background-color: var(--accent); */
+  filter: grayscale(100%);
 
-}
-nav ul li .s img:hover {
-
-  filter: grayscale(0%);
-  transition: .3s;
 }
 
 nav ul li .b img {
@@ -228,8 +223,13 @@ nav ul li .b img {
   height: 40px;
   width: 40px;
   color: var(--accent);
-  filter: grayscale(0%);
+  filter: grayscale(100%);
 
+}
+nav ul li .s img:hover {
+
+  filter: grayscale(0%);
+  transition: .3s;
 }
 nav ul li .c img {
   /* opacity: .5; */
@@ -239,10 +239,10 @@ nav ul li .c img {
   height: 40px;
   width: 40px;
   color: var(--accent);
-  filter: grayscale(100%);
+  filter: grayscale(0%);
 
 }
-nav ul li .c img:hover {
+nav ul li .b img:hover {
 
   filter: grayscale(0%);
   transition: .3s;

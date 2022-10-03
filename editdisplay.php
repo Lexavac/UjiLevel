@@ -14,6 +14,8 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,33 +41,29 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
     
   
   
-  <nav>
-    <a href="index.php" class="brand">
-      LX.
-    </a>
-  </div>
-
-  <div class="container">
-      <div>
-      </div>
-      <div class="line">
-        <div></div>
-      </div>
-      <ul>
-        <li><a class="s"href="eth.php"><img src="./st.svg" alt=""> Siswa</a></li>
-        <li><a class="b" href="displaybrg1.php"><img src="./b.svg" alt=""> Barang</a></li>
-      </ul>
+    <nav>
+      <a href="" class="brand">
+        LX.
+      </a>
     </div>
+  
+    <div class="container">
+        <div>
+        </div>
+  
+        </div>
+        <ul>
+        <li><a class="s"href="eth.php"><img src="./muak.svg" alt=""></a></li>
+          <li><a class="b"href="eth2.php"><img src="./et2.svg" alt=""></a></li>
+          <li><a class="c"href="eth3.php"><img src="./et3.svg" alt=""> </a></li>
+          <li><a class="d"href="eth4.php"><img src="./et4.svg" alt=""> </a></li>
+          <!-- <li><a class="b" href="displaybrg1.php"><img src="./b.svg" alt=""> Barang</a></li> -->
+        </ul> 
+      </div>
 
     <div class="aes">
         </div>
         <h1 class="ha"> <img src="sc.svg" alt=""> </i></h1>
-
-        <div class="srcs">
-        <form action="searchfn.php" GET>
-          <input class="src" type="text" name="search" placeholder="     Search Now..")>
-        </form>
-      </div>
 
       <div class="sq">
         <div></div>
@@ -80,55 +78,23 @@ if(mysqli_num_rows($query) < 1 ) { // jika nilai balik dari query menampilkan ku
     <div class="dash">
       <div>
         <h1>Dashboard.</h1>
-        <p>Hi , Welcome To Edit Data Siswa</p>
+        <p>Hi , Welcome To Create Data Siswa</p>
       </div>
     </div>
-
-    <div class="vrr">
-      <div><a href="eth.php"> <img src="./ar.svg" alt=""> </a></div>
+  
+  
+    </form>
+    <div class="user">
+      <h5>Hi , Lexavac.</h5>
+      <img src="acc.svg" alt="">
     </div>
 
 
-    <!-- <form action="simpan.php" method="post">
+  </main>
+</header>
 
-          <h4 class="ii">ID User</h4>:<input class="input" type="text" name="id_s" placeholder="ID User"><br>
-
-          <h4 class="ii">ID Item :</h4><input class="input" type="number" name="id_b" placeholder=" ID Item"><br>
-
-          <h4 class="ii">Name    :</h4><input class="input" type="text" name="name" placeholder="Name"><br>
-
-          <h4 class="ii">Tall    :</h4><input class="input" type="text" name="Tall" placeholder="Tall"><br>
-
-          <h4 class="ii">Birth   :</h4><input class="input" type="date" name="Birth" placeholder="Birth"><br>
-
-          <h4 class="ii">Gender  :</h4>
-          <select class="input" name="Gender">
-            <option value=""></option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-          <br>
-
-
-          <h4 class="ii">Addres  :</h4><input class="input" type="text" name="Addres" placeholder="Addres"><br>
-
-          <h4 class="ii">Age     :</h4><input class="input" type="text" name="age" placeholder="Age"><br>
-
-          <h4 class="ii">Grade   :</h4>
-          <select class="input" name="grade" >
-            <option value=""></option>
-            <option value="X">X</option>
-            <option value="XI">XI</option>
-            <option value="XII">XII</option>
-          </select>
-          <br>
-
-                                      
-          <h4 class="ii">Telp    :</h4><input class="input" type="number" name="telephone" placeholder="Telephone"><br>
-
-          <h4 class="ii">Email   :</h4><input class="input" type="email" name="email" placeholder="Email"><br>
-
-          <input class="submit" type="submit" name="simpan" value="simpan"> -->
+</body>
+</html>
           
           <form action="funceddit.php" method="post">
             <table>
